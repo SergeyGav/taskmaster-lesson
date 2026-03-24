@@ -19,6 +19,13 @@ jobs:
       - uses: hashicorp/setup-terraform@v4
         with:
           terraform_version: "1.14.4"
+
+      - name: download-artifact
+        uses: dawidd6/actions-download-artifact@v19
+        with: 
+          name: terraform-state   
+          path: terraform/terraform.tfstate
+          
         
       - name: terraform-init-plan-apply
         run: |
@@ -36,8 +43,3 @@ jobs:
         with: 
           name: terraform-state
           path: terraform/terraform.tfstate
-
-      # - name: download-artifact
-      #   uses: actions/download-artifact@v7
-      #   with: 
-      #     name: terraform-state
