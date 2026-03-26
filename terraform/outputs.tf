@@ -36,7 +36,7 @@ output "setup_instructions" {
     EC2_USER    = ubuntu
     EC2_SSH_KEY = Run: terraform output -raw private_key_pem
 
-  Then push app code to main to trigger deployment!!
+  Then push app code to main to trigger deployment!
 
   INSTRUCTIONS
 }
